@@ -45,7 +45,7 @@ class DBScheduleRepository implements ScheduleRepository
 
 
     /**
-     * возвращает массив открытых в момент вывозда организаций, и время их закрытия
+     * возвращает массив открытых в момент вызова организаций, и время их закрытия
      * @return array
      */
     public function opened(): array
@@ -73,7 +73,7 @@ class DBScheduleRepository implements ScheduleRepository
 
 
     /**
-     * Возвращает массив закрытых в момент вывозва организаций, и время до их открытия
+     * Возвращает массив закрытых в момент вызова организаций, и время до их открытия
      * @return array
      */
     public function closed(): array
@@ -98,7 +98,6 @@ class DBScheduleRepository implements ScheduleRepository
                 $res[] = [
 
                     'name' => $item['name'],
-                    'day_of_week' => $item['day_of_week'],
                     'timeToOpen' => $weekDiff . ' days ' . date('H:i', ($start - $currentTime)) . ' hours:minutes',
                 ];
             }
